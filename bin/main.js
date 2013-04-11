@@ -379,7 +379,7 @@ List.prototype = {
 }
 var Main = function() {
 	HttpExtensions.promise(new haxe.Http("/req/opk")).then(function(t) {
-		HttpExtensions.promise(new haxe.Http("req/uli"));
+		HttpExtensions.promise(new haxe.Http("req/oki"));
 	}).then(function(t) {
 		HttpExtensions.promise(new haxe.Http("req/tagada"));
 	});
@@ -389,16 +389,7 @@ Main.main = function() {
 	var app = new Main();
 }
 Main.prototype = {
-	pop: function(a) {
-		console.log("pop done");
-	}
-	,pip: function() {
-		console.log("pip");
-	}
-	,err: function(arguments) {
-		console.log("errorr");
-	}
-	,__class__: Main
+	__class__: Main
 }
 var HttpExtensions = function() { }
 HttpExtensions.__name__ = true;

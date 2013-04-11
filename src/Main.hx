@@ -6,11 +6,13 @@ class Main
 	
 	function new()
 	{
-	
+		new Http("/req/opk").promise()
+		.then(function(t) new Http("req/oki").promise())
+		.then(function(t)new Http("req/tagada").promise()); //is not fired 
 		
 		new Http("/req/opk").promise()
-		.then(function(t)new Http("req/uli").promise())
-		.then(function(t)new Http("req/tagada").promise());
+		.pipe(function(t)return new Http("req/oki").promise())
+		.then(function(t)new Http("req/tagada").promise()); //is fired
 
 	}
 	
